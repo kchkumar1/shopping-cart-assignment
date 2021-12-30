@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Sabka Bazaar - The best online grocery store in India. Sabka Bazaar is an online supermarket for all your daily needs.">
+    <title>Sabka Bazaar-Home</title>
+    <script defer src="../js/footer.js"></script>
+    <link rel="stylesheet" href="../styles/category.css" />
+    <link rel="stylesheet" href="../styles/login.css" />
+    <link rel="stylesheet" href="../styles/cart.css" />
+</head>
+
+<body>
+    <header>
+        <div>
+            <a href="./index.html"><img class="logo" src='../../static/images/logo.png' alt='Logo'></img></a>
+            <nav class='app-navlinks'>
+                <ul>
+                    <li>
+                        <a href="./index.html">Home</a>
+                    </li>
+                    <li>
+                        <a href="./products.html">Products</a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+        <div class="logincart-section">
+            <nav class='login-navlinks'>
+                <ul>
+                    <li>
+                        <a href='./login.html'>SignIn</a>
+                    </li>
+                    <li>
+                        <a href="./register.html">Register</a>
+                    </li>
+                </ul>
+            </nav>
+            <div class="cart-section">
+                <img class="cart-image" src='../../static/images/cart.svg' alt='cartImage'></img>
+                <p id='card-ItemsCount'>0 items</p>
+            </div>
+            <div class="modal">
+                <div class="modal-content">
+                    <div class="cart-container">
+                        <div class="cart-header">
+                            <p>My Cart</p>
+                            <span class="close-button">×</span>
+                        </div>
+                        <div class="cart-empty">
+                            <div class="desc-empty">
+                                <p>No Items In Your Cart</p>
+                                <p>Your favourite items are just a click away</p>
+                            </div>
+                            <div class="button">
+                                <button type="submit" onclick="startShopping()">
+                                    Start Shopping
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <div class="carousel">
+        <div class="slides">
+        </div>
+        <div class="controls">
+            <div class="control prev-slide">&#9668;</div>
+            <div class="control next-slide">&#9658;</div>
+        </div>
+    </div>
+    <main class="category-container"></main>
+    <uc-footer></uc-footer>
+    <script src="../js/home.js"></script>
+    <script src="../js/cart.js"></script>
+    <script> updateCartItems()</script>
+</body>
+
+</html>

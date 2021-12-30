@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sabka bazar</title>
+    <script defer src="../js/footer.js"></script>
+    <link rel="stylesheet" href="../styles/login.css" />
+</head>
+
+<body>
+    <header>
+        <div>
+            <a href="./index.html"><img class="logo" src='../../static/images/logo.png' alt='Logo'></img></a>
+            <nav class='app-navlinks'>
+                <ul>
+                    <li>
+                        <a href="./index.html">Home</a>
+                    </li>
+                    <li>
+                        <a href="./products.html">Products</a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+        <div class="logincart-section">
+            <nav class='login-navlinks'>
+                <ul>
+                    <li>
+                        <a href='./login.html'>SignIn</a>
+                    </li>
+                    <li>
+                        <a href="./register.html">Register</a>
+                    </li>
+                </ul>
+            </nav>
+            <div class="cart-section">
+                <img class="cart-image" src='../../static/images/cart.svg' alt='cartImage'></img>
+                <p>0 items</p>
+            </div>
+        </div>
+    </header>
+    <section class="login">
+        <div class="login-conatiner">
+            <h1>Login</h1>
+            <p>Get access to your orders, wishlist and recommedations</p>
+        </div>
+        <div class="login-actions">
+            <form onSubmit="handleSubmit(event)" class="login-form">
+                <label for='email'>Email</label>
+                <input type="email" id="email" required />
+                <label for='password'>Password</label>
+                <input type="password" id="password" required />
+                <button>Login</button>
+            </form>
+        </div>
+    </section>
+    <uc-footer></uc-footer>
+
+    <script defer src="../js/login.js"></script>
+</body>
+
+</html>

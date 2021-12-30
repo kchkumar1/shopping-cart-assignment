@@ -1,0 +1,81 @@
+$backgroundcolor: #fff;
+$buttoncolor: #d00155;
+$success: #38ce1a;
+$error: #f51d15;
+$inputcolor: #50dae2;
+
+@mixin message {
+    float: left;
+    margin-top: 10px;
+}
+
+* {
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+.login {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 32px 0;
+
+    .login-conatiner {
+        padding: 16px;
+    }
+    .login-actions {
+        padding: 16px;
+        width: 30%;
+
+        .login-form {
+            label {
+                float: left;
+                margin-top: 24px;
+            }
+            input {
+                padding-top: 10px;
+                font-size: 16px;
+                width: 100%;
+                border: none;
+                transition: 0.3s;
+                outline: none;
+                border-bottom: 2px solid #dedddd;
+                &:focus {
+                    border-bottom: 2px solid $inputcolor;
+                }
+            }
+            button {
+                background-color: $buttoncolor;
+                color: $backgroundcolor;
+                font-size: 14px;
+                border: 0;
+                padding: 10px;
+                width: 100%;
+                margin-top: 20px;
+                transition: all 0.5s;
+                &:hover {
+                    opacity: 0.8;
+                    cursor: pointer;
+                }
+            }
+            .success {
+                @include message;
+                color: $success;
+            }
+            .error {
+                @include message;
+                color: $error;
+            }
+        }
+    }
+}
+
+@media (max-width: 660px) {
+    .login {
+        .login-text {
+            text-align: center;
+        }
+        .login-action {
+            width: 70%;
+        }
+    }
+}

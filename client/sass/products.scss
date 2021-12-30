@@ -1,0 +1,119 @@
+.main-product {
+    display: flex;
+    .dropdownlist {
+        background-color: #d00155;
+        color: whitesmoke;
+        padding: 10px;
+    }
+    .sidebar-container {
+        min-width: 300px;
+        width: 300px;
+        background-color: #dcdcdc;
+        ul {
+            list-style: none;
+            padding: 0;
+            li {
+                padding: 10px;
+                border-bottom: 1px solid grey;
+            }
+            a:link {
+                text-decoration: none;
+                color: #000;
+            }
+            a:visited {
+                color: #000;
+            }
+        }
+        .icon-dropdown {
+            display: none;
+        }
+    }
+
+    .product-container {
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+        justify-content: center;
+        margin-right: -7.5%;
+        .product-card {
+            height: 500px;
+            width: 275px;
+            padding: 0 10px;
+            border-bottom: 2px solid #ffffff;
+            box-shadow: 1px 3px 5px -3px rgb(0 0 0 / 20%);
+
+            .product-name {
+                height: 7%;
+                font-weight: 700;
+            }
+
+            img {
+                object-fit: contain;
+                height: 200px;
+            }
+            .product-desc {
+                background-color: #dcdcdc;
+                height: 22%;
+                overflow: hidden;
+            }
+            .product-info {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                margin: 10px;
+
+                .prd-buynow {
+                    border: none;
+                    background-color: #d00155;
+                    color: #fff;
+                    padding: 10px;
+                    font-weight: bold;
+                    cursor: pointer;
+                    span {
+                        display: none;
+                    }
+                }
+            }
+        }
+    }
+
+    @media screen and (max-width: 600px) {
+        flex-direction: column;
+    }
+
+    @media only screen and (max-width: 1024px) {
+        .sidebar-container {
+            min-width: 180px;
+        }
+        .sidebar-list {
+            display: none;
+        }
+        .product-container {
+            margin: 0;
+            .product-card {
+                .product-info {
+                    display: flex;
+                    justify-content: flex-end;
+                    align-items: center;
+                    margin: 10px;
+                    p {
+                        display: none;
+                    }
+
+                    .prd-buynow {
+                        bottom: 10%;
+                        right: 3%;
+                        display: flex;
+                        border: none;
+                        padding: 10px;
+                        font-weight: bold;
+                        cursor: pointer;
+                        span {
+                            display: block;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

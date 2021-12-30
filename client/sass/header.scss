@@ -1,0 +1,76 @@
+header {
+    display: flex;
+    justify-content: space-between;
+    min-height: 70px;
+    height: 100%;
+    border-bottom: 2px solid rgb(255, 255, 255);
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+    .app-navlinks {
+        display: flex;
+        align-items: center;
+    }
+    div {
+        display: flex;
+    }
+
+    ul {
+        list-style: none;
+        display: flex;
+        justify-content: flex-end;
+        li {
+            padding: 0 10px;
+        }
+        a:link {
+            color: #000;
+            text-decoration: none;
+        }
+        a:visited {
+            color: #000;
+        }
+    }
+
+    .logo {
+        padding: 10px;
+        margin: 0 30px;
+        height: fit-content;
+    }
+
+    .logincart-section {
+        flex-direction: column;
+        .cart-section {
+            flex-wrap: nowrap;
+            display: flex;
+            cursor: pointer;
+            align-items: center;
+            justify-content: flex-start;
+            flex-grow: 1;
+            width: 90%;
+            background-color: rgb(238, 235, 235);
+
+            .cart-image {
+                display: flex;
+                flex-direction: row;
+                width: 30%;
+                height: 50px;
+                align-items: center;
+                padding: 15px 10px;
+                p {
+                    font-size: 1.3rem;
+                    font-weight: 600;
+                }
+            }
+        }
+    }
+    .login-navlinks {
+        font-size: 12px;
+    }
+}
+
+@media (max-width: 660px) {
+    header .app-navlinks {
+        display: none;
+    }
+    .login-navlinks {
+        display: none;
+    }
+}

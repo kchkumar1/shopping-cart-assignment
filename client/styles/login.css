@@ -1,0 +1,197 @@
+* {
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+body {
+    margin: 0 160px;
+}
+.login {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 32px 0;
+}
+.login .login-conatiner {
+    padding: 16px;
+}
+.login .login-actions {
+    padding: 16px;
+    width: 30%;
+}
+.login .login-actions .login-form label {
+    float: left;
+    margin-top: 24px;
+}
+.login .login-actions .login-form input {
+    padding-top: 10px;
+    font-size: 16px;
+    width: 100%;
+    border: none;
+    transition: 0.3s;
+    outline: none;
+    border-bottom: 2px solid #dedddd;
+}
+.login .login-actions .login-form input:focus {
+    border-bottom: 2px solid #50dae2;
+}
+.login .login-actions .login-form button {
+    background-color: #d00155;
+    color: #fff;
+    font-size: 14px;
+    border: 0;
+    padding: 10px;
+    width: 100%;
+    margin-top: 20px;
+    transition: all 0.5s;
+}
+.login .login-actions .login-form button:hover {
+    opacity: 0.8;
+    cursor: pointer;
+}
+.login .login-actions .login-form .success {
+    float: left;
+    margin-top: 10px;
+    color: #38ce1a;
+}
+.login .login-actions .login-form .error {
+    float: left;
+    margin-top: 10px;
+    color: #f51d15;
+}
+@media (max-width: 660px) {
+    .login .login-text {
+        text-align: center;
+    }
+    .login .login-action {
+        width: 70%;
+    }
+}
+
+.display-none {
+    display: none;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    min-height: 70px;
+    height: 100%;
+    border-bottom: 2px solid #fff;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+}
+header .app-navlinks {
+    display: flex;
+    align-items: center;
+}
+header div {
+    display: flex;
+}
+header ul {
+    list-style: none;
+    display: flex;
+    justify-content: flex-end;
+}
+header ul li {
+    padding: 0 10px;
+}
+header ul a:link {
+    color: #000;
+    text-decoration: none;
+}
+header ul a:visited {
+    color: #000;
+}
+header .logo {
+    padding: 10px;
+    margin: 0 30px;
+    height: fit-content;
+}
+header .logincart-section {
+    flex-direction: column;
+}
+header .logincart-section .cart-section {
+    flex-wrap: nowrap;
+    display: flex;
+    cursor: pointer;
+    align-items: center;
+    justify-content: flex-start;
+    flex-grow: 1;
+    width: 90%;
+    background-color: #eeebeb;
+}
+header .logincart-section .cart-section .cart-image {
+    display: flex;
+    flex-direction: row;
+    width: 30%;
+    height: 50px;
+    align-items: center;
+    padding: 15px 10px;
+}
+header .logincart-section .cart-section .cart-image p {
+    font-size: 1.3rem;
+    font-weight: 600;
+}
+header .login-navlinks {
+    font-size: 12px;
+}
+@media (max-width: 660px) {
+    header .app-navlinks {
+        display: none;
+    }
+    .login-navlinks {
+        display: none;
+    }
+}
+
+@media (max-width: 1024px) {
+    body {
+        margin: 0;
+    }
+}
+
+.modal {
+    z-index: 999999;
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    opacity: 0;
+    /* visibility: hidden; */
+    display: none;
+    transform: scale(1.1);
+    transition: display 0s linear 0.25s, opacity 0.25s 0s, transform 0.25s;
+}
+
+.modal-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    padding: 1rem 1.5rem;
+    /* width: 24rem; */
+    width: auto;
+    border-radius: 0.5rem;
+}
+
+.close-button {
+    width: 1.5rem;
+    line-height: 3rem;
+    text-align: center;
+    cursor: pointer;
+    background-color: lightgray;
+}
+
+.close-button:hover {
+    background-color: darkgray;
+}
+
+.show-modal {
+    opacity: 1;
+    display: block;
+    /* visibility: visible; */
+    transform: scale(1);
+    transition: display 0s linear 0s, opacity 0.25s 0s, transform 0.25s;
+}

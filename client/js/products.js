@@ -75,6 +75,24 @@ async function displayProducts() {
     for (const prd of finalList) {
         displayProductCard(prd);
     }
+    lazyLoad();
+}
+
+function lazyLoad() {
+    let lazyImages = document.querySelectorAll(".lazy-loaded-image.lazy");
+    let lazyImageObserver = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                let lazyImage = entry.target;
+                lazyImage.src = lazyImage.dataset.src;
+                lazyImage.classList.remove("lazy");
+                lazyImageObserver.unobserve(lazyImage);
+            }
+        });
+    });
+    lazyImages.forEach(lazyImage => {
+        lazyImageObserver.observe(lazyImage);
+    })
 }
 
 window.addEventListener("DOMContentLoaded", displayProducts);
@@ -93,7 +111,9 @@ function displayProductCard(prdt) {
     prdimageConatainer.setAttribute("class", "image-container");
 
     let productImage = document.createElement('img');
-    productImage.setAttribute("src", prdt.imageURL);
+    productImage.setAttribute("class", 'lazy-loaded-image lazy');
+    productImage.setAttribute("src", 'https://media3.giphy.com/media/3oEjI6SIIHBdRxXI40/200.gif');
+    productImage.setAttribute("data-src", prdt.imageURL);
     productImage.setAttribute("alt", prdt.name);
 
     prdimageConatainer.append(productImage);

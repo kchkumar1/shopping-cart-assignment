@@ -14,6 +14,24 @@ async function displayCategories() {
     for (const ctry of finalList) {
         displayCategoryCard(ctry);
     }
+    lazyLoad('.crt-lazy-loaded-image.lazy');
+}
+
+function lazyLoad(classname) {
+    let lazyImages = document.querySelectorAll(classname);
+    let lazyImageObserver = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                let lazyImage = entry.target;
+                lazyImage.src = lazyImage.dataset.src;
+                lazyImage.classList.remove("lazy");
+                lazyImageObserver.unobserve(lazyImage);
+            }
+        });
+    });
+    lazyImages.forEach(lazyImage => {
+        lazyImageObserver.observe(lazyImage);
+    })
 }
 
 window.addEventListener("DOMContentLoaded", displayCategories);
@@ -26,9 +44,11 @@ function displayCategoryCard(category) {
     imageConatainer.setAttribute("class", "image-container");
 
     let categoryImage = document.createElement('img');
-    categoryImage.setAttribute("src", category.imageUrl);
+    // categoryImage.setAttribute("src", category.imageUrl);
+    categoryImage.setAttribute("class", 'crt-lazy-loaded-image lazy');
+    categoryImage.setAttribute("src", 'https://media3.giphy.com/media/3oEjI6SIIHBdRxXI40/200.gif');
+    categoryImage.setAttribute("data-src", category.imageUrl);
     categoryImage.setAttribute("alt", category.name);
-    categoryImage.setAttribute("loading", 'lazy');
 
     imageConatainer.append(categoryImage);
 
@@ -88,7 +108,6 @@ function displayBannerImages(banner) {
     let bannerImage = document.createElement('img');
     bannerImage.setAttribute("src", banner.bannerImageUrl);
     bannerImage.setAttribute("alt", banner.bannerImageAlt);
-    bannerImage.setAttribute("loading", 'lazy');
 
     document.querySelector(".slides").appendChild(bannerImage);
 }
